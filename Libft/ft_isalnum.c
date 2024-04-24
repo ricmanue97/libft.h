@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:02:14 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:29 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:25:31 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	else if (c >= '0' && c <= '9')
 		return (1);

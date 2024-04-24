@@ -6,17 +6,17 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:45:05 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/19 14:28:32 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:42:22 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(lst == '\0')
+	if (!lst)
 		return (NULL);
-	while (lst != '\0')
+	while (lst)
 	{
 		lst = lst->next;
 	}

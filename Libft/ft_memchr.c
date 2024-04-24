@@ -3,30 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricardoalcobia <ricardoalcobia@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 09:44:44 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:11 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:37:45 by ricardoalco      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *ptr, int value, size_t num)
-//porcura um char num bloco de memoria especifico nos primieros n bytes
-{
-	size_t len;
-	
-	len = strlen(ptr);//mudar para o ft_strlen
-	
+void	*ft_memchr(const void *ptr, int value, size_t num)
+//The  memchr()  function  scans  the  initial n bytes of the memory area
+//pointed to by s for the first instance of c.  Both c and the  bytes  of
+//the memory area pointed to by s are interpreted as unsigned char.
 
-	
-}
+ {
+	size_t			i;
+	unsigned char	*ptr2;
+	unsigned char	chr;
 
-#include <stdio.h>
-int main()
-{
-	const char *s = "ola tudo bem";
-	int c = 111;
-	
+	chr = (unsigned char)value;
+	ptr2 = (unsigned char *)ptr;
+	i = 0;
+	while (i < num)
+	{
+		if (*ptr2 == chr)
+			return (ptr2);
+		ptr2++;
+		i++;
+	}
+	return (NULL);
 }

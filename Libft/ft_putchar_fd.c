@@ -6,11 +6,13 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:01:11 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/19 10:05:22 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:27:06 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

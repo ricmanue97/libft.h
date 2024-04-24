@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:26:48 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/19 13:44:29 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:18:52 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (lst != '\n')
+	while (!lst)
 	{
 		lst = lst->next;
 		i++;
 	}
 	return (i);
 }
-

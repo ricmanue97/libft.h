@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricardoalcobia <ricardoalcobia@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:59:11 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/15 16:36:23 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:59:30 by ricardoalco      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *a;
-	int i;
-	
+	char	*a;
+	size_t	i;
+
 	i = 0;
 	a = (char *)malloc(sizeof(char) * (len + 1));
 	if (!a)
@@ -25,16 +25,17 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		a[i] = s[start];
 		i++;
-		start++; 
+		start++;
 	}
 	a[i] = '\0';
 	return (a);
 }
-/* #include <stdio.h>
+
+/*#include <stdio.h>
 int main(void)
 {
     const char *str = "Hello, World!";
-    unsigned int start = 1;
+    unsigned int start = 11;
     size_t length = 10;
 
     char *substring = ft_substr(str, start, length);
@@ -51,4 +52,4 @@ int main(void)
     }
 
     return 0;
-} */
+}*/

@@ -6,7 +6,7 @@
 /*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:35:27 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:27 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:25:11 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	return (0);	
+	return (0);
 }
 /* #include<stdio.h>
 int main (void)

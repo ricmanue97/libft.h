@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricardoalcobia <ricardoalcobia@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 09:37:25 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/19 14:59:07 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:21:17 by ricardoalco      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int ft_countnum( int n)
+int	ft_countnum( int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n > 0)
@@ -25,24 +24,24 @@ int ft_countnum( int n)
 			n = n / 10;
 			i++;
 		}
-		return(i);
+		return (i);
 	}
 	else
 	{
-		while( n < 0)
+		while (n < 0)
 		{
 			n = n / 10;
 			i++;
 		}
 		i++;
-		return(i);
+		return (i);
 	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *num;
-	int numsize;
+	char	*num;
+	int		numsize;
 
 	numsize = ft_countnum(n);
 	num = malloc(sizeof(char) * (numsize + 1));
@@ -50,7 +49,7 @@ char *ft_itoa(int n)
 		return (NULL);
 	num[numsize] = '\0';
 	if (n == -2147483648)
-		return (num = "-2147483648");
+		return (ft_memcpy(num,"-2147483648", 12));
 	if (n == 0)
 		num[0] = 48;
 	if (n < 0)
@@ -67,7 +66,7 @@ char *ft_itoa(int n)
 	return (num);
 }
 
-  #include <stdlib.h>
+/*   #include <stdlib.h>
 #include <stdio.h>
 int main()
 {
@@ -75,6 +74,4 @@ int main()
     printf("%d\n", ft_countnum(test_value));
     printf("%s\n",ft_itoa(test_value));
     return 0;
-}
-
-
+} */

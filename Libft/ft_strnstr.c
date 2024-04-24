@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricardoalcobia <ricardoalcobia@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:14:16 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/15 16:36:33 by ricmanue         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:52:10 by ricardoalco      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,27 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	ii;
 	char * a;
-	
+
 	i = 0;
 	a = (char *) big;
-	if (!little)
+	if (len <= 0)
+		return(a);
+	if(little[0] == '\0')
 		return (a);
 	while (i < len)
 	{
 		ii = 0;
-		i++;
-		while(big[i] == little[ii] && little[ii] != '\0')
+		while(big[i] == little[ii] && i + ii < len)
 		{
-			i++;
+			if(little[ii + 1] == '\0')
+				return(a + i);
 			ii++;
-			len--;
-		}	
+		}
+		i++;
 	}
-	return (&a[i - ii]);
+	return (NULL);
 }
-int main() 
+/*int main()
 {
     char haystack[] = "Hello, world! How are you?";
     char needle[] = "orld";
@@ -51,4 +53,4 @@ int main()
     }
 
     return 0;
-}
+}*/

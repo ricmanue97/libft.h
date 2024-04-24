@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricardoalcobia <ricardoalcobia@student.    +#+  +:+       +#+        */
+/*   By: ricmanue <ricmanue@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 09:55:45 by ricmanue          #+#    #+#             */
-/*   Updated: 2024/04/22 17:23:15 by ricardoalco      ###   ########.fr       */
+/*   Created: 2024/04/22 09:42:43 by ricmanue          #+#    #+#             */
+/*   Updated: 2024/04/22 11:19:43 by ricmanue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	if (!del || !lst)
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }
+//leva um parametro *lst e o pointer para uma funcao del para apagar o node
+//de uma list, damos free apenass no node que apagamos
